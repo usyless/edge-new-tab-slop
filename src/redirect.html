@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Tab</title>
+  <link href="./redirect.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="grid" id="tiles-container"></div>
+
+<!-- Floating Action Buttons -->
+  <div class="action-buttons">
+    <!-- New Clear Background Button (Hidden by default) -->
+    <button id="clear-bg-btn" title="Clear Background" class="hidden">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <button id="bg-btn" title="Change Background">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+    </button>
+    <button id="add-btn" title="Add Shortcut">+</button>
+  </div>
+  
+  <!-- Hidden file input for background -->
+  <input type="file" id="bg-input" accept="image/*" class="hidden">
+
+  <!-- Custom Context Menu -->
+  <div id="context-menu" class="hidden">
+    <div id="pin-btn">Pin</div>
+    <div id="edit-menu-btn">Edit</div>
+    <div id="remove-btn">Remove</div>
+  </div>
+
+  <!-- Add/Edit Modal -->
+  <div id="modal-overlay" class="hidden">
+    <div class="modal-content">
+      <h3 id="modal-title">Add Shortcut</h3>
+      <div class="input-group">
+        <label for="site-title">Name</label>
+        <input type="text" id="site-title" placeholder="Site Name">
+      </div>
+      <div class="input-group">
+        <label for="site-url">URL</label>
+        <input type="url" id="site-url" placeholder="https://www.example.com">
+      </div>
+      <div class="modal-actions">
+        <button id="cancel-btn">Cancel</button>
+        <button id="save-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./redirect.js" type="module"></script>
+</body>
+</html>
